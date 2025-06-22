@@ -1,0 +1,8 @@
+git status # voir le status des fichiers de ton repertoire Git 
+git pull origin main # main represente le nom de la branch Git
+git add "nondufichier" # permet d'ajouter un fichier dans ton repertoire git
+git commit -m "message" # 
+git push origin main 
+git checkout "nom de la branch"
+git merge "nom de la branche 1" "nom de la branche 2"
+
