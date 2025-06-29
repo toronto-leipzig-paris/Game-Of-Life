@@ -1,2 +1,1 @@
-GRID_SIZE = (10, 10)
-CELL_SIZE = 50
+GRID_SIZE = (50, 50)

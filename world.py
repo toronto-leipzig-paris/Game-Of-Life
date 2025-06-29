@@ -1,18 +1,16 @@
-GRID_SIZE = (50, 50)  # Width and height in cells
-
 from numpy import random
+
 from cell import Cell
+from constants import GRID_SIZE
 
 
 class World:
     def __init__(
         self,
         grid_size=GRID_SIZE,
-        steps=10,
         window_size=800,  # pixels
     ):
         self.width, self.height = grid_size
-        self.steps = steps
         self.cell_size = window_size // max(self.width, self.height)
         self.create_canvas()
 
@@ -62,7 +60,6 @@ class World:
         for cell in self.cells.values():
             cell.interact(self.cells)
         self.update_canvas()
-        self.print_live_cells()
 
     def print_live_cells(self):
         live_cells = [cell for cell in self.cells.values() if cell.alive]
@@ -74,7 +71,6 @@ class World:
         import time
 
         self.spawn_cells()
-        for _ in range(self.steps):
+        while True:
             self.step()
             time.sleep(0.5)
-        self.canvas.mainloop()
